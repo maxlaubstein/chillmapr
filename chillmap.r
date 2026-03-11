@@ -17,7 +17,7 @@ chillmapr <- function(region = NULL, resolution, theme = "minimal", savepng = FA
   }
   
   #Retrieve elevation data from within this shapefile:
-  regionelev <- elevatr::get_elev_raster(locations = region, z = z, clip = "locations")
+  regionelev <- elevatr::get_elev_raster(locations = region, z = resolution, clip = "locations")
   regionelev <- rast(regionelev)
   regionelev.df <- raster::as.data.frame(regionelev, xy = TRUE) %>% na.omit()
   colnames(regionelev.df) <- c("Longitude", "Latitude", "Elevation")
