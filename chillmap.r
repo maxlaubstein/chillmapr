@@ -62,9 +62,9 @@ chillmapr <- function(region = NULL, resolution, theme = "minimal", savepng = FA
       labs(x=NULL, y = NULL)
   }
   
-  return(plot)
   if(savepng == TRUE){ggsave(pngname, plot = plot, width = pngdim[1], height = pngdim[2], units = "in", dpi = pngdpi, bg = "transparent")}
-  
+  return(plot)
+
 }
 
 
