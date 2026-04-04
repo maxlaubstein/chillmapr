@@ -6,6 +6,8 @@ chillmapr <- function(region = NULL,
                       pngdpi = 1000, 
                       pngdim = c(4,4), 
                       extra = NULL){
+  message("Usage: \n chillmapr( \n \t region = NULL,  \n \t resolution,  \n \t theme = 'minimal',  \n \t savepng = FALSE,  \n \t pngname = 'map.png',  \n \t pngdpi = 1000,  \n \t pngdim = c(4,4),  \n \t extra = NULL \n \t)")
+ 
   require(ggplot2)
   require(raster)
   require(elevatr)
