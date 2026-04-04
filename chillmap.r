@@ -1,4 +1,11 @@
-chillmapr <- function(region = NULL, resolution, theme = "minimal", savepng = FALSE, pngname = "map.png", pngdpi = 1000, pngdim = c(4,4)){
+chillmapr <- function(region = NULL, 
+                      resolution, 
+                      theme = "minimal", 
+                      savepng = FALSE, 
+                      pngname = "map.png", 
+                      pngdpi = 1000, 
+                      pngdim = c(4,4), 
+                      extra = NULL){
   require(ggplot2)
   require(raster)
   require(elevatr)
@@ -45,6 +52,8 @@ chillmapr <- function(region = NULL, resolution, theme = "minimal", savepng = FA
       xlab("Longitude")+
       ylab("Latitude")+
       labs(x=NULL, y = NULL)
+    if(!is.null(extra)){plot <- plot + eval(parse(text = extra))
+}
   }
   if(theme == "void"){
     plot <- ggplot()+
@@ -60,6 +69,7 @@ chillmapr <- function(region = NULL, resolution, theme = "minimal", savepng = FA
       xlab("Longitude")+
       ylab("Latitude")+
       labs(x=NULL, y = NULL)
+      if(!is.null(extra)){plot <- plot + eval(parse(text = extra))
   }
   
   if(savepng == TRUE){ggsave(pngname, plot = plot, width = pngdim[1], height = pngdim[2], units = "in", dpi = pngdpi, bg = "transparent")}
