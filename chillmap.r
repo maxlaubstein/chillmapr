@@ -52,8 +52,7 @@ chillmapr <- function(region = NULL,
       xlab("Longitude")+
       ylab("Latitude")+
       labs(x=NULL, y = NULL)
-    if(!is.null(extra)){plot <- plot + eval(parse(text = extra))
-}
+    if(!is.null(extra)){plot <- plot + eval(parse(text = extra))}
   }
   if(theme == "void"){
     plot <- ggplot()+
@@ -69,8 +68,8 @@ chillmapr <- function(region = NULL,
       xlab("Longitude")+
       ylab("Latitude")+
       labs(x=NULL, y = NULL)
-      if(!is.null(extra)){plot <- plot + eval(parse(text = extra))
-  }
+      if(!is.null(extra)){plot <- plot + eval(parse(text = extra))}
+    }
   
   if(savepng == TRUE){ggsave(pngname, plot = plot, width = pngdim[1], height = pngdim[2], units = "in", dpi = pngdpi, bg = "transparent")}
   return(plot)
